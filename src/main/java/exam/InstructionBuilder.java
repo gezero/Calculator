@@ -28,47 +28,49 @@ public class InstructionBuilder {
         while ((line = bufferedReader.readLine()) != null){
             String[] split = line.split(" ");
             Double value = Double.valueOf(split[1]);
-            switch (split[0]){
-                case "add":{
-                    builder.add(value);
-                    break;
-                }
-                case "subtract":{
-                    builder.subtract(value);
-                    break;
-                }
-                case "multiply":{
-                    builder.multiply(value);
-                    break;
-                }
-                case "divide":{
-                    builder.divide(value);
-                    break;
-                }
-                case "apply":{
-                    builder.apply(value);
-                    break;
-                }
-                default:{
-                    throw new UnsupportedOperationException("Operation " + split[0] + " is not supported");
-                }
-
-            }
+            builder.addInstruction(split[0], value);
 
         }
         return builder.build();
     }
 
-    private void apply(Double value) {
+    public InstructionBuilder addInstruction(String instruction, Double value) {
+        switch (instruction){
+            case "add":{
+                return add(value);
+            }
+            case "subtract":{
+                return subtract(value);
+            }
+            case "multiply":{
+                return multiply(value);
+            }
+            case "divide":{
+                return divide(value);
+            }
+            case "apply":{
+                return apply(value);
+            }
+            default:{
+                throw new UnsupportedOperationException("Operation " + instruction + " is not supported");
+            }
+
+        }
+    }
+
+    private InstructionBuilder apply(Double value) {
         instructions.add(new Apply(value));
+        return this;
     }
 
-    private void divide(Double value) {
+    private InstructionBuilder divide(Double value) {
         instructions.add(new Divide(value));
+        return this;
     }
 
-    private void multiply(Double value) {
+    private InstructionBuilder multiply(Double value) {
         instructions.add(new Multiply(value));
+        return this;
     }
 
     private InstructionBuilder subtract(Double value) {
@@ -81,7 +83,7 @@ public class InstructionBuilder {
         return this;
     }
 
-    private List<Instruction> build() {
+    public List<Instruction> build() {
         return instructions;
     }
 }
