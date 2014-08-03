@@ -1,6 +1,4 @@
-package exam;
-
-import exam.instructions.*;
+package exam.instructions;
 
 import java.io.*;
 import java.util.ArrayList;

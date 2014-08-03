@@ -1,7 +1,7 @@
 package integration;
 
 import exam.Calculator;
-import exam.InstructionBuilder;
+import exam.instructions.InstructionBuilder;
 import org.junit.Test;
 
 import java.io.IOException;

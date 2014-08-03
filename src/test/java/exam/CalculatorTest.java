@@ -1,6 +1,7 @@
 package exam;
 
 import exam.instructions.Instruction;
+import exam.instructions.InstructionBuilder;
 import org.junit.Test;
 
 import java.util.List;

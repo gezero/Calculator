@@ -1,6 +1,8 @@
 package exam;
 
+import exam.instructions.Apply;
 import exam.instructions.Instruction;
+import exam.instructions.InstructionBuilder;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
