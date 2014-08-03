@@ -13,6 +13,6 @@ public class Divide implements Instruction {
     }
     @Override
     public double calculate(double operand) {
-        return operand + value;
+        return operand / value;
     }
 }

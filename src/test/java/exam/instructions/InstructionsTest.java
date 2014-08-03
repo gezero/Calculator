@@ -23,7 +23,7 @@ public class InstructionsTest {
 
         assertThat(add.calculate(0d), is(-10d));
         assertThat(add.calculate(3d), is(-7d));
-        assertThat(add.calculate(-3d), is(13d));
+        assertThat(add.calculate(-3d), is(-13d));
     }
 
     @Test

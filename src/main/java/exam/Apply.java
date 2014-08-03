@@ -11,6 +11,6 @@ public class Apply implements Instruction {
     }
     @Override
     public double calculate(double operand) {
-        return operand + value;
+        return value;
     }
 }
