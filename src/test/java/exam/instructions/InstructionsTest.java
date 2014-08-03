@@ -45,9 +45,13 @@ public class InstructionsTest {
         assertThat(add.calculate(-3d), is(-0.3d));
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     public void divideByZeroTest() {
         Divide add = new Divide(0d);
+
+        assertThat(add.calculate(1d), is(Double.POSITIVE_INFINITY));
+        assertThat(add.calculate(0d), is(Double.NaN));
+        assertThat(add.calculate(-3d), is(Double.NEGATIVE_INFINITY));
     }
 
     @Test
