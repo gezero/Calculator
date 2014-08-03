@@ -58,27 +58,27 @@ public class InstructionBuilder {
         }
     }
 
-    private InstructionBuilder apply(Double value) {
+    public InstructionBuilder apply(Double value) {
         instructions.add(new Apply(value));
         return this;
     }
 
-    private InstructionBuilder divide(Double value) {
+    public InstructionBuilder divide(Double value) {
         instructions.add(new Divide(value));
         return this;
     }
 
-    private InstructionBuilder multiply(Double value) {
+    public InstructionBuilder multiply(Double value) {
         instructions.add(new Multiply(value));
         return this;
     }
 
-    private InstructionBuilder subtract(Double value) {
+    public InstructionBuilder subtract(Double value) {
         instructions.add(new Subtract(value));
         return this;
     }
 
-    private InstructionBuilder add(Double value) {
+    public InstructionBuilder add(Double value) {
         instructions.add(new Add(value));
         return this;
     }
