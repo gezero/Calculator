@@ -1,4 +1,4 @@
-package exam;
+package exam.instructions;
 
 /**
  * @author Jiri

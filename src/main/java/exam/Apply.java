@@ -1,5 +1,7 @@
 package exam;
 
+import exam.instructions.Instruction;
+
 /**
  * @author Jiri
  */

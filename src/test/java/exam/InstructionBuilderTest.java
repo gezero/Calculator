@@ -1,9 +1,6 @@
 package exam;
 
-import exam.instructions.Add;
-import exam.instructions.Divide;
-import exam.instructions.Multiply;
-import exam.instructions.Subtract;
+import exam.instructions.*;
 import org.junit.Test;
 
 import java.util.List;

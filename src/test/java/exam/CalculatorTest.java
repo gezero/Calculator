@@ -1,5 +1,6 @@
 package exam;
 
+import exam.instructions.Instruction;
 import org.junit.Test;
 
 import java.util.List;
