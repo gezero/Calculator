@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class CalculatorTest {
 
@@ -15,7 +15,7 @@ public class CalculatorTest {
 
         List<Instruction> instructions = new InstructionBuilder().subtract(10d).apply(15d).build();
 
-        assertThat(calculator.calculate(instructions),is(5d));
+        assertThat(calculator.calculate(instructions), is(5d));
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -41,6 +41,6 @@ public class CalculatorTest {
                 .apply(15d).build();
 
         // ((15-10+20)*2 + 15 -101)/3 = -12
-        assertThat(calculator.calculate(instructions),is(-12d));
+        assertThat(calculator.calculate(instructions), is(-12d));
     }
 }

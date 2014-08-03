@@ -14,21 +14,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 public class Calculator {
 
 
-    public double calculate(List<Instruction> instructions) {
-        validateScript(instructions);
-        double value = instructions.remove(instructions.size() - 1).calculate(0d);
-        for (Instruction instruction : instructions) {
-            value = instruction.calculate(value);
-        }
-        return value;
-    }
-
-    private void validateScript(List<Instruction> instructions) {
-        checkNotNull(instructions);
-        checkArgument(instructions.get(instructions.size() - 1) instanceof Apply);
-    }
-
-    public static void main(String[] args){
+    public static void main(String[] args) {
         if (args.length != 1) {
             help();
             return;
@@ -59,5 +45,19 @@ public class Calculator {
     private static void help() {
         System.out.println("The program accepts only 1 parameter. It has to be a path to a file containing");
         System.out.println("instructions that the calculator should calculate");
+    }
+
+    public double calculate(List<Instruction> instructions) {
+        validateScript(instructions);
+        double value = instructions.remove(instructions.size() - 1).calculate(0d);
+        for (Instruction instruction : instructions) {
+            value = instruction.calculate(value);
+        }
+        return value;
+    }
+
+    private void validateScript(List<Instruction> instructions) {
+        checkNotNull(instructions);
+        checkArgument(instructions.get(instructions.size() - 1) instanceof Apply);
     }
 }

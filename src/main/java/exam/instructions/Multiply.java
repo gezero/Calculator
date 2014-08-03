@@ -11,6 +11,7 @@ public class Multiply implements Instruction {
     public Multiply(Double value) {
         this.value = value;
     }
+
     @Override
     public double calculate(double operand) {
         return operand * value;

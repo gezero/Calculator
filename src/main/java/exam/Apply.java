@@ -9,6 +9,7 @@ public class Apply implements Instruction {
     public Apply(Double value) {
         this.value = value;
     }
+
     @Override
     public double calculate(double operand) {
         return value;

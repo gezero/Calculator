@@ -25,7 +25,7 @@ public class InstructionBuilder {
         BufferedReader bufferedReader = new BufferedReader(reader);
 
         String line;
-        while ((line = bufferedReader.readLine()) != null){
+        while ((line = bufferedReader.readLine()) != null) {
             String[] split = line.split(" ");
             Double value = Double.valueOf(split[1]);
             builder.addInstruction(split[0], value);
@@ -35,23 +35,23 @@ public class InstructionBuilder {
     }
 
     public InstructionBuilder addInstruction(String instruction, Double value) {
-        switch (instruction){
-            case "add":{
+        switch (instruction) {
+            case "add": {
                 return add(value);
             }
-            case "subtract":{
+            case "subtract": {
                 return subtract(value);
             }
-            case "multiply":{
+            case "multiply": {
                 return multiply(value);
             }
-            case "divide":{
+            case "divide": {
                 return divide(value);
             }
-            case "apply":{
+            case "apply": {
                 return apply(value);
             }
-            default:{
+            default: {
                 throw new UnsupportedOperationException("Operation " + instruction + " is not supported");
             }
 

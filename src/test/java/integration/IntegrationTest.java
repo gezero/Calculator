@@ -21,11 +21,13 @@ public class IntegrationTest {
         InputStream resourceAsStream = this.getClass().getResourceAsStream("/programs/program1");
         assertThat(calculator.calculate(InstructionBuilder.readFromStream(resourceAsStream)), is(15d));
     }
+
     @Test
     public void program2() throws IOException {
         InputStream resourceAsStream = this.getClass().getResourceAsStream("/programs/program2");
         assertThat(calculator.calculate(InstructionBuilder.readFromStream(resourceAsStream)), is(45d));
     }
+
     @Test
     public void program3() throws IOException {
         InputStream resourceAsStream = this.getClass().getResourceAsStream("/programs/program3");
